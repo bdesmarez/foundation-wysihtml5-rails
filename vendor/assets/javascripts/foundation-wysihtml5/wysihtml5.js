@@ -4795,7 +4795,8 @@ wysihtml5.dom.parse = (function() {
     // Insert new DOM tree
     element.appendChild(fragment);
     
-    return isString ? wysihtml5.quirks.getCorrectInnerHTML(element) : element;
+    // return isString ? wysihtml5.quirks.getCorrectInnerHTML(element) : element;
+    return elementOrHtml;
   }
   
   function _convert(oldNode, cleanUp) {
@@ -9503,7 +9504,7 @@ wysihtml5.views.Textarea = wysihtml5.views.View.extend(
      *  - Observes for paste and drop
      */
     _initParser: function() {
-      this.observe("paste:composer", function() {
+      /*this.observe("paste:composer", function() {
         var keepScrollPosition  = true,
             that                = this;
         that.composer.selection.executeAndRestore(function() {
@@ -9517,7 +9518,7 @@ wysihtml5.views.Textarea = wysihtml5.views.View.extend(
             newValue;
         newValue = this.parse(value);
         this.textarea.setValue(newValue);
-      });
+      });*/
     }
   });
 })(wysihtml5);
